@@ -1,0 +1,322 @@
+.main-container
+{
+    width: 1000px;
+
+    margin: auto;
+    margin-top: 50px;
+
+    padding-bottom: 30px;
+
+    text-align: center;
+}
+
+.sub-title
+{
+    margin-top: 32px;
+    margin-bottom: 13px;
+
+    color: var(--Dark-Gray, #001E40);
+
+    font-family: Rubik;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    text-align: right;
+}
+
+.form-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    width: 100%;
+
+    padding: 50px;
+
+    overflow: hidden;
+
+    background-color: white;
+    border-radius: 10px;
+
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.description-text-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 42px;
+
+    margin-top: 22px;
+
+    padding: 12px 24px;
+
+    background-color: #E0E9FC;
+    border-radius: 5px;
+
+    text-align: start;
+}
+
+.description-text
+{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.contact-description-container
+{
+    width: 100%;
+}
+
+.form-field-name
+{
+    display: block;
+
+    width: 100%;
+
+    text-align: right;
+}
+
+.contact-description
+{
+    width: 100%;
+    height: 190px;
+
+    resize: none;
+}
+
+.textarea-footer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    min-height: 22px;
+
+    margin-top: 8px;
+
+    direction: rtl;
+}
+
+.characters-counter
+{
+    flex-shrink: 0;
+
+    margin: 0;
+
+    color: #D93025;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    text-align: right;
+    white-space: nowrap;
+}
+
+/*
+    המחלקה validation-mark מוגדרת בפרויקט באופן גלובלי.
+    באזור זה מבטלים רק את המיקום המוחלט, כדי שהשגיאה
+    ומונה התווים יישארו בשני צדדים נפרדים.
+*/
+.textarea-footer .textarea-validation-mark
+{
+    position: static;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    gap: 6px;
+
+    margin: 0;
+}
+
+.textarea-validation-mark img
+{
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+}
+
+.validation-text
+{
+    margin: 0;
+
+    color: #D93025;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    white-space: nowrap;
+}
+
+.error-field
+{
+    border-color: #D93025;
+}
+
+.form-row
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    width: 100%;
+}
+
+.form-row .form-field-container
+{
+    width: 273px;
+}
+
+input
+{
+    width: 273px;
+}
+
+.size-limit-for-matselect-container
+{
+    width: 273px;
+}
+
+.button-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 48px;
+    margin-bottom: 50px;
+}
+
+.next-button
+{
+    min-width: 140px;
+
+    padding: 16px;
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    background-color: #005EEE;
+
+    border: none;
+    border-radius: 6px;
+
+    box-shadow: 0px 10px 20px 0px rgba(0, 94, 238, 0.20);
+}
+
+.back-button-container
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 16px;
+}
+
+.prev-button
+{
+    margin-bottom: 1px;
+
+    color: #005EEE;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    background-color: transparent;
+
+    border: none;
+    border-radius: 6px;
+}
+
+button:hover
+{
+    cursor: pointer;
+}
+
+.title-container
+{
+    margin: auto;
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+.main-title
+{
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 47.4px;
+}
+
+.main-logo
+{
+    margin-top: 25px;
+}
+
+@media screen and (max-width: 750px)
+{
+    .main-container
+    {
+        width: 82%;
+    }
+
+    .form-container
+    {
+        width: 100%;
+
+        padding: 20px;
+    }
+
+    .description-text-container
+    {
+        flex-direction: column;
+
+        gap: 25px;
+
+        margin-top: 0;
+    }
+
+    .form-row
+    {
+        flex-direction: column;
+    }
+
+    .form-row .form-field-container,
+    .size-limit-for-matselect-container,
+    input
+    {
+        width: 100%;
+    }
+
+    .textarea-footer
+    {
+        gap: 10px;
+    }
+}

@@ -1,0 +1,146 @@
+<div class="main-container">
+
+    <div class="title-container">
+        <h1 class="main-title">טופס פניות הציבור</h1>
+
+        <img
+            class="main-logo"
+            src="Check.svg"
+            alt="לוגו טופס פניות הציבור"/>
+    </div>
+
+    <h2 class="sub-title">פרטי הפניה</h2>
+
+    <div
+        class="form-container"
+        [formGroup]="form">
+
+        <div class="description-text-container">
+
+            <img
+                src="description-icon.svg"
+                alt="אייקון נורה המסמל אזור הסבר"/>
+
+          <span class="description-text">
+    יש לכלול תיאור נושא ומהות הפניה. יש לנסח באופן תמציתי וברור את מה שטוענים או מבקשים,<br>
+    תוך ציון פרטים רלוונטיים לצורך טיפול בפניה ומועדים של האירועים בהם עוסקת הפניה.
+      </span>
+
+        </div>
+
+        <div class="form-field-container contact-description-container">
+
+            <label
+                for="contact-description-textarea"
+                class="form-field-name">
+                מהות הפניה
+            </label>
+
+            <textarea
+                id="contact-description-textarea"
+                class="contact-description"
+                formControlName="contactDescription"
+                maxlength="7000"
+                (input)="OnTextAreaChanged($event)"
+                [ngClass]="{
+                    'error-field':
+                        form.controls['contactDescription'].errors?.['required']
+                        && form.controls['contactDescription'].touched
+                }">
+            </textarea>
+
+            <div class="textarea-footer">
+
+                <p class="characters-counter">
+                    {{ textAreaRemainingCharacters }}
+                </p>
+
+                <div
+                    *ngIf="
+                        form.controls['contactDescription'].errors?.['required']
+                        && form.controls['contactDescription'].touched
+                    "
+                    class="validation-mark textarea-validation-mark">
+
+                    <img
+                        src="validation-mark.svg"
+                        alt=""/>
+
+                    <p class="validation-text">
+                        שדה חובה
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-field-container">
+
+                <label
+                    for="court-case-number"
+                    class="form-field-name">
+                    מספר תיק בית משפט
+                </label>
+
+                <input
+                    id="court-case-number"
+                    formControlName="courtCaseNumber"/>
+
+            </div>
+
+            <div class="form-field-container size-limit-for-matselect-container">
+
+                <h3 class="form-field-name">
+                    בית המשפט
+                </h3>
+
+                <mat-select
+                    formControlName="courthouse"
+                    [(value)]="selectedCourt"
+                    (selectionChange)="OnCourtSelectionChanged($event)">
+
+                    <mat-option
+                        *ngFor="let court of courtsList"
+                        [value]="court">
+                        {{ court }}
+                    </mat-option>
+
+                </mat-select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="button-container">
+
+        <div class="back-button-container">
+
+            <img
+                src="back-arrow.svg"
+                alt=""/>
+
+            <button
+                type="button"
+                class="prev-button"
+                (click)="GoToPrevPage()">
+                חזרה
+            </button>
+
+        </div>
+
+        <button
+            type="button"
+            class="next-button"
+            (click)="GoToNextStep()">
+            המשך
+        </button>
+
+    </div>
+
+</div>
